@@ -1,0 +1,14 @@
+CREATE VIEW salesByProduct 
+AS 
+SELECT p.Titulo, p.Descripcion, p.PrecioUnitario, v.CantidadVendida, v.Fecha 
+FROM Productos p
+INNER JOIN Ventas v ON V.IDProductos = p.IDProductos;
+
+
+
+CREATE VIEW VistaVentas
+AS
+SELECT p.IDProductos, p.Titulo, p.Descripcion, p.PrecioUnitario, p.Existencias,
+       v.IDVentas, v.CantidadVendida, v.Fecha
+FROM Productos p
+INNER JOIN Ventas v ON p.IDProductos = v.IDProductos;
